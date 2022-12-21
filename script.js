@@ -15293,6 +15293,7 @@ const dictionary = [
   "shave",
 ];
 
+
 const keyboard = document.querySelector("[data-keyboard]");
 const guessGrid = document.querySelector("[data-guess-grid]");
 const alertContainer = document.querySelector("[data-alert-container]");
