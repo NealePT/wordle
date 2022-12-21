@@ -15309,12 +15309,12 @@ startInteraction();
 function startInteraction() {
   document.addEventListener("click", handleMouseClick);
   document.addEventListener("keydown", handleKeyPress);
-}
+};
 
 function stopInteraction() {
   document.removeEventListener("click", handleMouseClick);
   document.removeEventListener("keydown", handleKeyPress);
-}
+};
 
 function handleMouseClick(e) {
   if (e.target.matches("[data-key]")) {
@@ -15331,7 +15331,7 @@ function handleMouseClick(e) {
     deleteKey();
     return;
   }
-}
+};
 
 function handleKeyPress(e) {
   if (e.key === "Enter") {
@@ -15348,7 +15348,7 @@ function handleKeyPress(e) {
     pressKey(e.key);
     return;
   }
-}
+};
 
 function pressKey(key) {
   const activeTiles = getActiveTiles();
@@ -15359,7 +15359,7 @@ function pressKey(key) {
   nextTile.dataset.letter = key.toLowerCase();
   nextTile.textContent = key;
   nextTile.dataset.state = "active";
-}
+};
 
 function deleteKey() {
   const activeTiles = getActiveTiles();
@@ -15368,7 +15368,7 @@ function deleteKey() {
   lastTile.textContent = "";
   delete lastTile.dataset.state;
   delete lastTile.dataset.letter;
-}
+};
 
 function submitGuess() {
   const activeTiles = [...getActiveTiles()];
@@ -15389,7 +15389,7 @@ function submitGuess() {
 
   stopInteraction();
   activeTiles.forEach((...params) => flipTile(...params, guess));
-}
+};
 
 function flipTile(tile, index, array, guess) {
   const letter = tile.dataset.letter;
@@ -15426,11 +15426,11 @@ function flipTile(tile, index, array, guess) {
     },
     { once: true }
   );
-}
+};
 
 function getActiveTiles() {
   return guessGrid.querySelectorAll('[data-state="active"]');
-}
+};
 
 function showAlert(message, duration = 1000) {
   const alert = document.createElement("div");
@@ -15446,7 +15446,7 @@ function showAlert(message, duration = 1000) {
       alert.remove();
     });
   }, duration);
-}
+};
 
 function shakeTiles(tiles) {
   tiles.forEach((tile) => {
@@ -15459,7 +15459,7 @@ function shakeTiles(tiles) {
       { once: true }
     );
   });
-}
+};
 
 function checkWinLose(guess, tiles) {
   if (guess === targetWord) {
@@ -15468,13 +15468,13 @@ function checkWinLose(guess, tiles) {
     stopInteraction();
     return;
   }
-
   const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])");
   if (remainingTiles.length === 0) {
     showAlert("Correct word: " + targetWord.toUpperCase(), null);
     stopInteraction();
   }
-}
+};
+
 function danceTiles(tiles) {
   tiles.forEach((tile, index) => {
     setTimeout(() => {
@@ -15488,4 +15488,4 @@ function danceTiles(tiles) {
       );
     }, (index * DANCE_ANIMATION_DURATION) / 5);
   });
-}
+};
