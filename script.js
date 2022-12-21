@@ -15312,7 +15312,6 @@ function startInteraction() {
 };
 
 function stopInteraction() {
-  document.removeEventListener("click", handleMouseClick);
   document.removeEventListener("keydown", handleKeyPress);
 };
 

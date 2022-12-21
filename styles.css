@@ -10,8 +10,6 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 /* Custom styles starting here */
 
-
-
 *, *::after, *::before {
   box-sizing: border-box;
   font-family: Arial;
@@ -219,4 +217,36 @@ body {
 
 .alert.hide {
   opacity: 0;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newGame {
+  font-size: inherit;
+  border: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(
+    var(--hue, 200),
+    var(--saturation, 1%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+  );
+  color: white;
+  fill: white;
+  text-transform: uppercase;
+  border-radius: .25em;
+  cursor: pointer;
+  user-select: none;
+  width: 200px;
+}
+
+.newGame:hover, .newGame:focus {
+  --lightness-offset: 10%;
 }
