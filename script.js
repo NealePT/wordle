@@ -15301,9 +15301,6 @@ const alertContainer = document.querySelector("[data-alert-container]");
 const WORD_LENGTH = 5;
 const FLIP_ANIMATION_DURATION = 500;
 const DANCE_ANIMATION_DURATION = 500;
-const referenceDate = new Date(2022, 0, 1);
-const msOffsetFromRefDate = Date.now() - referenceDate;
-const dayOffsetFromRefDate = msOffsetFromRefDate / 1000 / 60 / 60 / 24;
 const targetWord =
   targetWords[Math.floor(Math.random() * targetWords.length)];
 
