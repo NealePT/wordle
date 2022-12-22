@@ -15301,8 +15301,7 @@ const alertContainer = document.querySelector("[data-alert-container]");
 const WORD_LENGTH = 5;
 const FLIP_ANIMATION_DURATION = 500;
 const DANCE_ANIMATION_DURATION = 500;
-let targetWord =
-  targetWords[Math.floor(Math.random() * targetWords.length)];
+let targetWord = targetWords[Math.floor(Math.random() * targetWords.length)];
 
 startInteraction();
 
